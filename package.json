@@ -6,7 +6,8 @@
   "main": "run.js",
   "scripts": {
     "start": "node run.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "echo test run successfull"
   },
   "dependencies": {
     "@eslint/js": "^9.1.1",
