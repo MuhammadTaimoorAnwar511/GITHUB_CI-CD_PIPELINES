@@ -27,7 +27,7 @@ jobs:
         run: npm run lint
 
       - name: Run Tests
-        run: npm test  # This will execute `echo test run successful`
+        run: npm test  
 
       - name: Echo message for test run
         run: echo "Test run completed successfully!"
