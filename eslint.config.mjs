@@ -1,9 +1,14 @@
-import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
-import globals from "globals";
-
-
-export default [
-  {files: ["**/*.js"], languageOptions: {sourceType: "commonjs"}},
-  {languageOptions: { globals: globals.browser }},
-  pluginReactConfig,
-];
+export default {
+  files: ["*/.js"],
+  languageOptions: {
+    ecmaVersion: 2021,
+    sourceType: "module",
+    globals: {
+      $: "readonly", // for jQuery
+    },
+  },
+  rules: {
+    "no-unused-vars": "warn",
+    "no-console": "off",
+  },
+};
