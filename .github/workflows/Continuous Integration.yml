@@ -1,0 +1,31 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main  # Ensures the workflow runs on pushes to the main branch
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # Specifies the runner environment
+
+    steps:
+      - uses: actions/checkout@v2
+        # Checks out your repository under $GITHUB_WORKSPACE, so the job can access it
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '12.10.0'  # Set this to the version of Node.js that matches your project's specification
+
+      - name: Install Dependencies
+        run: npm install
+        # Installs node modules based on the package.json file found in your repository
+
+      - name: Echo Test
+        run: echo "Running Echo Test!"
+        # An example of a simple echo test to demonstrate running a custom script
+
+      - name: Run ESLint
+        run: npm run lint
+        # Runs ESLint as defined under scripts in your package.json
