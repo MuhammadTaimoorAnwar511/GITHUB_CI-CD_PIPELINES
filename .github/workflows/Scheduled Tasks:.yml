@@ -1,33 +1,20 @@
-name: Scheduled Maintenance
+name: daily-report
 
 on:
   schedule:
-    - cron: '15 19 * * *'
+    - cron: '5 * * * *'
   workflow_dispatch:
 
 jobs:
-  maintenance:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Set up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: '3.x'
-
-    - name: Install dependencies
-      run: pip install secure-smtplib  
-
-    - name: Run maintenance script
-      run: node run.js
-
-    - name: Send notification email
-      run: python sendemail.py
-      env:
-        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-
-    - name: Notify completion
-      run: echo "Maintenance task completed successfully."
+      - uses: action/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: 3.x
+      - name: Run email code
+        env:
+          USER_EMAIL: ${{ secrets.USER_EMAIL }}
+          USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
+        run: python send_email.py
