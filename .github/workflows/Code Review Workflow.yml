@@ -47,16 +47,17 @@ jobs:
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
 
   security-scan:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20.x'  
-      
-      - name: Install dependencies
-        run: npm install
+   runs-on: ubuntu-latest
+   steps:
+    - uses: actions/checkout@v3
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'  
+    - name: Install dependencies
+      run: npm install
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
 
-      - name: Security Vulnerability Scan
-        uses: github/codeql-action/analyze@v2
