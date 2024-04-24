@@ -3,7 +3,7 @@ name: Scheduled Maintenance
 on:
   schedule:
     # Runs at 19:15 UTC every day
-    - cron: '15 19 * * * '
+    - cron: '5 * * * *'
   workflow_dispatch:
 
 jobs:
