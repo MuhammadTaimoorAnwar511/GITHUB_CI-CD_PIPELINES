@@ -27,9 +27,9 @@ def send_email(subject, body, to_email, from_email, password, smtp_server, smtp_
 # Email details - replace placeholders with your actual details
 subject = "GitHub Workflow Notification"
 body = "The GitHub Actions workflow has completed successfully."
-to_email = "receiver@example.com"
-from_email = "your-email@example.com"
-password = "your-email-password"
+to_email = "i211232@nu.edu.pk"
+from_email = "github.com"
+password = "vlfw nyuf uhbs ywte"
 smtp_server = "smtp.example.com"
 smtp_port = 587
 
