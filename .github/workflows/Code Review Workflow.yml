@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ main ]
   push:
-    branches: [ main] 
+    branches: [ main ] 
 
 jobs:
   coding-standards:
@@ -30,7 +30,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20.x'
+          node-version: '20.x'  # Make sure this matches the version used in other jobs
       
       - name: Install dependencies
         run: npm install
@@ -41,7 +41,7 @@ jobs:
           projectBaseDir: './'
           args: >
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-            -Dsonar.host.url=https://sonarqube.example.com
+            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
 
   security-scan:
     runs-on: ubuntu-latest
@@ -50,7 +50,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '20.x'  
       
       - name: Install dependencies
         run: npm install
