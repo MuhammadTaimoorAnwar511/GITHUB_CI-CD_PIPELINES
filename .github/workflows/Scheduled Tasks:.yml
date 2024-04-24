@@ -4,6 +4,7 @@ on:
   schedule:
     # Runs at 19:15 UTC every day
     - cron: '15 19 * * * '
+  workflow_dispatch:
 
 jobs:
   maintenance:
