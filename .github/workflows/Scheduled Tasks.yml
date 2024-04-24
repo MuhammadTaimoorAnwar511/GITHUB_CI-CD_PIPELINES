@@ -1,4 +1,4 @@
-name: daily-report
+name: Scheduled Task
 
 on:
   schedule:
@@ -17,4 +17,4 @@ jobs:
         env:
           USER_EMAIL: ${{ secrets.USER_EMAIL }}
           USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
-        run: python send_email.py
+        run: python sendemail.py
