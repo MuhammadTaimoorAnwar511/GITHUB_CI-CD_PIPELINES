@@ -1,7 +1,7 @@
 # Project Documentation
 
 Welcome to the project documentation!
-Taimoor Anwar i21-1232_Q
+Taimoor Anwar i21-1232_q
 
 ## Introduction
 
