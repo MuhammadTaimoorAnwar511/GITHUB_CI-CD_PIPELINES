@@ -1,6 +1,7 @@
 name: Dependency Updates
 
 on:
+  pull_request:
   schedule:
     - cron: '0 0 * * 0' # This line schedules the workflow to run once a week on Sunday at midnight
   workflow_dispatch: # This line allows for manual triggering of the workflow
