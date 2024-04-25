@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: "20.x"
       - name: Run Dependabot
-        uses: dependabot/dependabot-core@${{ inputs.dependabot_version }}
+        uses: dependabot/dependabot-core@${{ github.event.inputs.dependabot_version }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           directory: "/"
