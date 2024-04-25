@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-  schedule:
-    - cron: '0 * * * *' # Runs every hour, you can adjust this according to your needs
 
 jobs:
   build:
@@ -29,22 +27,12 @@ jobs:
     - name: Test code
       run: npm test
 
-    - name: Execute scraping script
-      run: npm start
-
-    # Optional: Data validation step
-    - name: Validate scraped data
-      run: node validate.js # Ensure you have a validation script like validate.js
-
-    # Optional: Deploy updates
-    - name: Deploy updates
-      run: <deployment command>
-      env:
-        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-
-    # Optional: Notify team
-    - name: Notify team
-      uses: some/notify-action@v1
-      with:
-        message: "Scraping completed successfully"
-        webhook-url: ${{ secrets.TEAM_WEBHOOK_URL }}
+    # Additional steps for your custom workflow
+    # Add steps to automate specific tasks relevant to your project
+    # For example:
+    # - name: Generate release notes
+    #   run: <command to generate release notes>
+    # - name: Analyze performance metrics
+    #   run: <command to analyze performance metrics>
+    # - name: Sync data between systems
+    #   run: <command to sync data>
