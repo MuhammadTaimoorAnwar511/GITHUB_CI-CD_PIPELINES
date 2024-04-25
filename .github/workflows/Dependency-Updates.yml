@@ -1,7 +1,4 @@
-# .github/workflows/dependabot.yml
-# Configuration for Dependabot to keep the dependencies up to date automatically
-
-name: Dependabot
+name: Dependency-Updates
 
 on:
   schedule:
