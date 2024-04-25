@@ -26,13 +26,3 @@ jobs:
 
     - name: Test code
       run: npm test
-
-    # Additional steps for your custom workflow
-    # Add steps to automate specific tasks relevant to your project
-    # For example:
-    # - name: Generate release notes
-    #   run: <command to generate release notes>
-    # - name: Analyze performance metrics
-    #   run: <command to analyze performance metrics>
-    # - name: Sync data between systems
-    #   run: <command to sync data>
