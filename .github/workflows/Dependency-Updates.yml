@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
+    inputs:
+      dependabot_version:
+        description: 'Dependabot version to use'
+        default: '0.117.x' # or whatever default version you want to use
 
 jobs:
   dependabot:
