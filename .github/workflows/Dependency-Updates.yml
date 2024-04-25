@@ -7,7 +7,7 @@ on:
     inputs:
       dependabot_version:
         description: 'Dependabot version to use'
-        default: '0.117.x' # or whatever default version you want to use
+        default: '0.117.x'
 
 jobs:
   dependabot:
@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: "20.x"
       - name: Run Dependabot
-        uses: dependabot/dependabot-core@${{ github.event.inputs.dependabot_version }}
+        uses: dependabot/dependabot-core@${{ inputs.dependabot_version }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           directory: "/"
