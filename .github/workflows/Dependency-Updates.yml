@@ -1,0 +1,26 @@
+name: Dependency Updates
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:  
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20.X"
+      - name: Run Dependabot
+        uses: dependabot/dependabot-core@v0.141.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          directory: "/"
+          package-ecosystem: "npm"
+          schedule: "daily"
+          versioning-strategy: "increase"
+          open-pull-requests-limit: 10
