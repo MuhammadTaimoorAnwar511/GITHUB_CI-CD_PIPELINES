@@ -1,3 +1,4 @@
+/*
 name: Scheduled Task
 
 on:
@@ -18,3 +19,4 @@ jobs:
           USER_EMAIL: ${{ secrets.USER_EMAIL }}
           USER_PASSWORD: ${{ secrets.USER_PASSWORD }}
         run: python sendemail.py
+*/
